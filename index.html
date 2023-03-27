@@ -24,14 +24,52 @@
         "
       >
         <h1 class="text-white text-4xl font-bold">Find Your Film</h1>
-        <button class="text-white text-sm font-bold mt-3">My Watchlist</button>
+        <button class="text-white text-sm font-bold mt-3 hover:text-red-500">
+          My Watchlist
+        </button>
       </div>
       <!-- Search bar  -->
       <div class="flex justify-center -translate-y-4 w-">
-        <form>
-          <input class="p-1 rounded-l-md w-[360px] translate-x-1" type="text" placeholder=" Search for movies" name="search">
-          <button class="bg-gray-200 p-1 rounded-r-md w-[100px] -translate-x-1" type="submit">Search</button>
+        <form id="form">
+          <input
+            class="p-1 rounded-l-md w-[360px] translate-x-1 bg-[#2E2E2F] text-white"
+            type="text"
+            placeholder=" Search for movies"
+            name="search"
+          />
+          <button
+            class="text-white p-1 rounded-r-md w-[100px] -translate-x-1 bg-[#434344] hover:bg-red-500"
+            type="submit"
+          >
+            Search
+          </button>
         </form>
+      </div>
+      <!-- JS content inject here -->
+      <div id="results" class="flex flex-col justify-center items-center">
+        <img src="/images/Icon.png" alt="movie icon" class="w-[70px] mt-36" />
+        <p class="text-[#2E2E2F] font-bold">Start Exploring</p>
+        <!-- <div class="w-[454px] flex border-b border-b-[#2E2E2F] py-6">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+            alt="movie poster"
+            class="w-[100px] inline-block mr-6"
+          />
+          <div class="inline-block w-[300px] text-white">
+            <h1 class="inline text-2xl mr-3 font-semibold mt-9">Terminator</h1>
+            <p class="inline mr-5 text-xl">⭐️ 8.1</p>
+            <br />
+            <p class="inline text-xs mr-3">164 min</p>
+            <p class="inline text-xs mr-3">action, drama</p>
+            <button class="text-xs">➕ Add to watchlist</button>
+            <br />
+            <p class="text-xs mt-3">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus,
+              rerum illum tempore facere doloribus corrupti perspiciatis modi,
+            </p>
+          </div>
+        </div> -->
+      </div>
     </div>
   </body>
   <script src="/index.js" type="module"></script>
