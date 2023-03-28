@@ -547,6 +547,11 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.my-36{
+  margin-top: 9rem;
+  margin-bottom: 9rem;
+}
+
 .ml-10{
   margin-left: 2.5rem;
 }
@@ -603,6 +608,14 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-36{
+  margin-bottom: 9rem;
+}
+
+.mb-72{
+  margin-bottom: 18rem;
+}
+
 .block{
   display: block;
 }
@@ -637,6 +650,28 @@ video {
 
 .h-\[150px\]{
   height: 150px;
+}
+
+.h-screen{
+  height: 100vh;
+}
+
+.h-full{
+  height: 100%;
+}
+
+.h-max{
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-\[7700px\]{
+  height: 7700px;
+}
+
+.max-h-fit{
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .w-\[550px\]{
@@ -713,6 +748,10 @@ video {
 
 .w-\[454px\]{
   width: 454px;
+}
+
+.w-\[494px\]{
+  width: 494px;
 }
 
 .translate-y-4{
@@ -892,6 +931,14 @@ video {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
+.text-end{
+  text-align: end;
+}
+
 .font-Inter{
   font-family: "Inter", cursive;
 }
@@ -919,6 +966,11 @@ video {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold{
@@ -962,6 +1014,35 @@ video {
 .text-\[\#2E2E2F\]{
   --tw-text-opacity: 1;
   color: rgb(46 46 47 / var(--tw-text-opacity));
+}
+
+.text-red-500{
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-red-300{
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
+.text-red-400{
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
+.text-\[\]{
+  color: ;
+}
+
+.text-\[\#434344\]{
+  --tw-text-opacity: 1;
+  color: rgb(67 67 68 / var(--tw-text-opacity));
 }
 
 .hover\:bg-yellow-500:hover{
@@ -1022,6 +1103,11 @@ video {
 .hover\:text-red-500:hover{
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 
