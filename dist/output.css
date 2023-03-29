@@ -552,6 +552,11 @@ video {
   margin-bottom: 9rem;
 }
 
+.my-72{
+  margin-top: 18rem;
+  margin-bottom: 18rem;
+}
+
 .ml-10{
   margin-left: 2.5rem;
 }
@@ -614,6 +619,14 @@ video {
 
 .mb-72{
   margin-bottom: 18rem;
+}
+
+.mt-56{
+  margin-top: 14rem;
+}
+
+.mt-52{
+  margin-top: 13rem;
 }
 
 .block{
@@ -752,6 +765,10 @@ video {
 
 .w-\[494px\]{
   width: 494px;
+}
+
+.w-\[320px\]{
+  width: 320px;
 }
 
 .translate-y-4{

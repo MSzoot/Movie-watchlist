@@ -64,6 +64,8 @@ const fetchMovies = async () => {
       </div>`
     }
     result.innerHTML = html
+}else {
+    result.innerHTML = '<p class="text-[#2E2E2F] w-[320px] text-center font-bold mt-52 mb-72 ">Unable to find what you’re looking for. Please try another search.</p>'
 }
 }
 
