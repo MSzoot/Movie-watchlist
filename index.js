@@ -1,59 +1,55 @@
 // API DATA
-
-
 // Here is your key: 182bd55b
 
-// Please append it to all of your API requests,
 
-// OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=182bd55b
 
-// Click the following URL to activate your key: http://www.omdbapi.com/apikey.aspx?VERIFYKEY=345e360b-4933-42ba-9692-06126be79e0a
-// If you did not make this request, please disregard this email.
-
+//variables set up for serchbar form , container of results and searched movie title
 const form = document.getElementById("form")
-const result = document.getElementById("results")
+const SearchResultsContainer = document.getElementById("search-results-container")
 const movieTitle  = document.getElementById("movie-title")
 
+
+// set up empty arrays for finish search results and items added to watchlist 
 let resultsWithDetails = []
 let myWatchlist = []
 
-const addToWatchlist = (imdbID) => {
-    for ( let result of resultsWithDetails){
-        if(result.imdbID == imdbID) {
-            myWatchlist.push(result)
-        }
-    }
-    console.log(myWatchlist)
-}
 
+
+// function displays animated searching message when waiting for search results
 const waiting = () =>{
-    result.innerHTML= result.innerHTML = '<p class="text-white w-[320px] text-xl text-center font-bold mt-52 mb-72 animate-pulse ">Searching ...'
+    SearchResultsContainer.innerHTML = '<p class="text-white w-[320px] text-xl text-center font-bold mt-52 mb-72 animate-pulse ">Searching ...</p>'
 
 }
 
+//search bar event listener 
 form.addEventListener("submit", (e)=>{
     e.preventDefault()
     waiting()
     fetchMovies()
 })
 
-
+// fetch movies async function
 const fetchMovies = async () => {
+    // fetching api using by search option, search option will return array of movies but without details
     const response = await fetch(`http://www.omdbapi.com/?s=${movieTitle.value}&type=movie&apikey=182bd55b`);
-    const movie = await response.json();
-    if (movie.Response == "True"){
-        const searchResults = movie.Search
-   
+    const movies = await response.json();
+    if (movies.Response == "True"){
+        const searchResults = movies.Search
 
-        let resultsWithDetails = []
+
+        
+        // iterating over searchResults array and fetching api again , this time using title option
+        //api will return single object of for each title with details needed , objects will be pushed to empty resultsWithDetails array
+        const resultsWithDetails = []
         for ( let searchResult of searchResults){
             const response = await fetch(`http://www.omdbapi.com/?t=${searchResult.Title}&apikey=182bd55b`);
             const movies = await response.json();
             resultsWithDetails.push(movies)
         }
-            console.log(resultsWithDetails)
 
 
+
+        //this bit will generate html based for each index of resultsWithDetails array
         let html = ''
         for (let result of resultsWithDetails) {
             html += `<div class="w-[454px] flex border-b border-b-[#2E2E2F] py-6 mb-3">
@@ -74,18 +70,26 @@ const fetchMovies = async () => {
             </div>`
             
         }
-        result.innerHTML = html
+        //update index.html with previusly generated html
+        SearchResultsContainer.innerHTML = html
 
+
+        // add event listener to each + watchlist button, every button have his own ID based on movie imdbID provided by API,
+        // when clicked it will add movie object to myWatchlist array only when array doesnt include this object already
+        // this solution may not be ideal but it works and its simple to understand ;) I will think about different aprroach later on
         for(let result of resultsWithDetails){
             document.getElementById(`${result.imdbID}`).addEventListener("click", () => {
                 if (!myWatchlist.includes(result)) {
                     myWatchlist.push(result)
                 }
-                console.log(myWatchlist)
             })
         }
-    }else {
-        result.innerHTML = '<p class="text-[#2E2E2F] w-[320px] text-center font-bold mt-52 mb-72 ">Unable to find what you’re looking for. Please try another search.</p>'
+    }
+
+    
+    //app will inform the user when search failed or there is no any result find
+    else {
+        SearchResultsContainer.innerHTML = '<p class="text-[#2E2E2F] w-[320px] text-center font-bold mt-52 mb-72 ">Unable to find what you’re looking for. Please try another search.</p>'
     }
 }
 
