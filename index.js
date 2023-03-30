@@ -7,12 +7,11 @@
 const form = document.getElementById("form")
 const SearchResultsContainer = document.getElementById("search-results-container")
 const movieTitle  = document.getElementById("movie-title")
+const watchlistMoviesContainer = document.getElementById("watchlist-container")
 
 
 // set up empty arrays for finish search results and items added to watchlist 
 let resultsWithDetails = []
-let myWatchlist = []
-
 
 
 // function displays animated searching message when waiting for search results
@@ -79,9 +78,15 @@ const fetchMovies = async () => {
         // this solution may not be ideal but it works and its simple to understand ;) I will think about different aprroach later on
         for(let result of resultsWithDetails){
             document.getElementById(`${result.imdbID}`).addEventListener("click", () => {
+                let myWatchlist = JSON.parse(localStorage.getItem("LSmovies"))
+                if(myWatchlist== null){
+                myWatchlist =[]
+                }
                 if (!myWatchlist.includes(result)) {
                     myWatchlist.push(result)
                 }
+                localStorage.setItem("LSmovies", JSON.stringify(myWatchlist));
+                console.log(myWatchlist)
             })
         }
     }
@@ -92,4 +97,5 @@ const fetchMovies = async () => {
         SearchResultsContainer.innerHTML = '<p class="text-[#2E2E2F] w-[320px] text-center font-bold mt-52 mb-72 ">Unable to find what you’re looking for. Please try another search.</p>'
     }
 }
+
 

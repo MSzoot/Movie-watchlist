@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Orbitron:wght@700&display=swap"
       rel="stylesheet"
     />
-    <title>Title</title>
+    <title>Watchlist</title>
   </head>
   <body class="font-Inter">
     <div class="w-[550px] bg-black mx-auto">
@@ -23,38 +23,29 @@
             url(/images/movies\ 1.png);
         "
       >
-        <h1 class="text-white text-4xl font-bold">Find Your Movie</h1>
+        <h1 class="text-white text-4xl font-bold">Watchlist</h1>
         <a
-          href="watchlist.html"
+          href="index.html"
           class="text-white text-sm font-bold mt-3 border p-2 hover:bg-red-700"
         >
-          My Watchlist
+          Look for more movies
         </a>
       </div>
       <!-- Search bar  -->
-      <div class="flex justify-center -translate-y-4 w-">
-        <form id="form">
-          <input
-            class="p-1 rounded-l-md w-[360px] translate-x-1 bg-[#2E2E2F] text-white"
-            type="text"
-            placeholder=" Search for movies"
-            id="movie-title"
-          />
-          <button
-            class="text-white p-1 rounded-r-md w-[100px] -translate-x-1 bg-[#434344] hover:bg-red-700"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-      </div>
+
       <!-- JS content inject here -->
       <div
-        id="search-results-container"
+        id="watchlist-container"
         class="flex flex-col items-center min-h-screen"
       >
-        <img src="/images/Icon.png" alt="movie icon" class="w-[70px] mt-36" />
-        <p class="text-[#2E2E2F] font-bold mb-72">Start Exploring</p>
+        <p class="text-[#2E2E2F] font-bold mt-56">
+          Your watchlist is looking a little empty...
+        </p>
+        <a
+          href="index.html"
+          class="text-xs mt-3 font-bold text-[white] border p-2 hover:text-white hover:bg-red-700"
+          >Find some movies
+        </a>
       </div>
     </div>
   </body>
